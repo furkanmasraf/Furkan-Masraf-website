@@ -2,7 +2,6 @@ package com.furkanmasraf.portfolio.config;
 
 import com.furkanmasraf.portfolio.model.*;
 import com.furkanmasraf.portfolio.repository.*;
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-@RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
 
     private final ProfileInfoRepository profileInfoRepository;
@@ -18,6 +16,20 @@ public class DataInitializer implements CommandLineRunner {
     private final ProjectRepository projectRepository;
     private final SkillRepository skillRepository;
     private final CertificateRepository certificateRepository;
+
+    public DataInitializer(
+            ProfileInfoRepository profileInfoRepository,
+            ExperienceRepository experienceRepository,
+            ProjectRepository projectRepository,
+            SkillRepository skillRepository,
+            CertificateRepository certificateRepository
+    ) {
+        this.profileInfoRepository = profileInfoRepository;
+        this.experienceRepository = experienceRepository;
+        this.projectRepository = projectRepository;
+        this.skillRepository = skillRepository;
+        this.certificateRepository = certificateRepository;
+    }
 
     @Override
     public void run(String... args) throws Exception {

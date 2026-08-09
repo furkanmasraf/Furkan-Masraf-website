@@ -3,14 +3,12 @@ package com.furkanmasraf.portfolio.controller;
 import com.furkanmasraf.portfolio.dto.ApiResponse;
 import com.furkanmasraf.portfolio.model.*;
 import com.furkanmasraf.portfolio.repository.*;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-@RequiredArgsConstructor
 public class PortfolioController {
 
     private final ProfileInfoRepository profileInfoRepository;
@@ -18,6 +16,20 @@ public class PortfolioController {
     private final ProjectRepository projectRepository;
     private final SkillRepository skillRepository;
     private final CertificateRepository certificateRepository;
+
+    public PortfolioController(
+            ProfileInfoRepository profileInfoRepository,
+            ExperienceRepository experienceRepository,
+            ProjectRepository projectRepository,
+            SkillRepository skillRepository,
+            CertificateRepository certificateRepository
+    ) {
+        this.profileInfoRepository = profileInfoRepository;
+        this.experienceRepository = experienceRepository;
+        this.projectRepository = projectRepository;
+        this.skillRepository = skillRepository;
+        this.certificateRepository = certificateRepository;
+    }
 
     @GetMapping("/profile")
     public ApiResponse<ProfileInfo> getProfile() {
