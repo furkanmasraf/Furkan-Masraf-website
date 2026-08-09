@@ -1,7 +1,5 @@
 package com.furkanmasraf.portfolio.exception;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,8 +7,6 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @Data
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
 public class ErrorResponse {
 
@@ -35,7 +31,7 @@ public class ErrorResponse {
         this.timestamp = timestamp;
     }
 
-    // Explicit native Java Builder so IntelliJ IDEA resolves builder() instantly without Lombok plugin dependency
+    // Native Java Builder - Works in any IDE without requiring Lombok plugin indexing
     public static ErrorResponseBuilder builder() {
         return new ErrorResponseBuilder();
     }
