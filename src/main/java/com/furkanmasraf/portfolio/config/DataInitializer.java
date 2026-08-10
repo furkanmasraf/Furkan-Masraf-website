@@ -93,16 +93,16 @@ public class DataInitializer implements CommandLineRunner {
 
         Experience bilyoner = Experience.builder()
                 .company("Bilyoner")
-                .role("iOS Mobile Developer Intern")
+                .role("Mobile Developer Intern")
                 .period("06/2024 – 07/2024")
                 .location("İstanbul")
                 .displayOrder(3)
                 .highlights(Arrays.asList(
-                        "Swift kullanarak iOS uygulama geliştirme süreçlerinde görev aldım.",
+                        "Mobil uygulama geliştirme ve servis entegrasyon süreçlerinde görev aldım.",
                         "API entegrasyonları ve kullanıcı arayüzü iyileştirmeleri yaptım.",
                         "Takım içi kod inceleme (code review) süreçlerine katıldım."
                 ))
-                .technologies(Arrays.asList("Swift", "iOS", "REST API", "Code Review", "UI Optimization"))
+                .technologies(Arrays.asList("Mobile App", "REST API", "Code Review", "UI Optimization"))
                 .build();
 
         experienceRepository.saveAll(Arrays.asList(dogus, fiba, bilyoner));
@@ -182,10 +182,9 @@ public class DataInitializer implements CommandLineRunner {
                 Skill.builder().name("Docker & Docker Compose").category("DevOps").proficiencyPercentage(85).iconName("box").highlightText("Containerization & Orchestration").build(),
                 Skill.builder().name("Git / GitHub / Azure DevOps").category("DevOps").proficiencyPercentage(90).iconName("git-branch").highlightText("Version Control & CI/CD").build(),
 
-                // Testing & Mobile & Web
+                // Testing & Web
                 Skill.builder().name("JUnit 5 & Mockito").category("Testing").proficiencyPercentage(85).iconName("check-circle").highlightText("Unit Testing & Mocking").build(),
-                Skill.builder().name("React & TypeScript").category("Frontend").proficiencyPercentage(80).iconName("layout").highlightText("Modern UI, Component State").build(),
-                Skill.builder().name("Swift (iOS)").category("Mobile").proficiencyPercentage(75).iconName("smartphone").highlightText("iOS Development & API integration").build()
+                Skill.builder().name("React & TypeScript").category("Frontend").proficiencyPercentage(80).iconName("layout").highlightText("Modern UI, Component State").build()
         );
 
         skillRepository.saveAll(skills);
