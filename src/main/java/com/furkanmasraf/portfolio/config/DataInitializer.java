@@ -47,7 +47,7 @@ public class DataInitializer implements CommandLineRunner {
                 .fullName("Furkan Masraf")
                 .title("Backend Developer")
                 .email("masraffurkan@gmail.com")
-                .phone("+90 538 472 75 54")
+                .phone("")
                 .location("İstanbul, Türkiye")
                 .linkedinUrl("https://www.linkedin.com/in/furkan-masraf-20a8681b6/")
                 .githubUrl("https://github.com/furkanmasraf")
