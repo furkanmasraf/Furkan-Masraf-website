@@ -1,27 +1,21 @@
 spring.application.name=Furkan Masraf Portfolio API
 server.port=${PORT:8080}
 
-# Primary Database: H2 In-Memory with PostgreSQL compatibility mode for instant zero-config startup
+# Database Configuration Template
 spring.datasource.url=${DB_URL:jdbc:h2:mem:furkan_portfolio;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE}
 spring.datasource.driverClassName=${DB_DRIVER:org.h2.Driver}
 spring.datasource.username=${DB_USERNAME:sa}
 spring.datasource.password=${DB_PASSWORD:}
 
-# PostgreSQL Production settings (Overridden via environment variables):
-# DB_URL=jdbc:postgresql://localhost:5432/furkan_portfolio
-# DB_USERNAME=postgres
-# DB_PASSWORD=your_secure_password
-# DB_DRIVER=org.postgresql.Driver
-
+# JPA Configuration
 spring.jpa.database-platform=${JPA_DIALECT:org.hibernate.dialect.H2Dialect}
 spring.jpa.hibernate.ddl-auto=${DDL_AUTO:update}
 spring.jpa.show-sql=false
 spring.jpa.properties.hibernate.format_sql=true
 
-# H2 Console (available at http://localhost:8080/h2-console)
+# H2 Console
 spring.h2.console.enabled=${H2_CONSOLE_ENABLED:true}
 spring.h2.console.path=/h2-console
 
-# Custom Logging
+# Logging
 logging.level.com.furkanmasraf.portfolio=INFO
-

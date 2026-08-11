@@ -4,3 +4,10 @@ target/
 *.iml
 *.log
 .DS_Store
+
+# Environment & Secret configuration files
+.env
+.env.*
+application-local.properties
+application-secret.properties
+application-prod.properties
